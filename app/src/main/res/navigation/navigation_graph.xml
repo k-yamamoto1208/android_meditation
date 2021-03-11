@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/top_fragment">
+
+    <fragment
+        android:id="@+id/top_fragment"
+        android:name="com.example.meditationapp.fragment.TopFragment"
+        android:label="@string/top_title"
+        tools:layout="@layout/fragment_top" >
+
+        <action
+            android:id="@+id/top_to_history_create"
+            app:destination="@id/history_create_fragment" />
+        <action
+            android:id="@+id/top_to_history_list"
+            app:destination="@id/history_list_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/history_create_fragment"
+        android:name="com.example.meditationapp.fragment.HistoryCreateFragment"
+        android:label="@string/history_create_title"
+        tools:layout="@layout/fragment_history_create" >
+
+        <argument
+            android:name="time"
+            app:argType="string" />
+        <argument
+            android:name="music"
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/history_list_fragment"
+        android:name="com.example.meditationapp.fragment.HistoryListFragment"
+        android:label="@string/history_list_title"
+        tools:layout="@layout/fragment_history_list" >
+
+        <action
+            android:id="@+id/history_list_to_history_detail"
+            app:destination="@+id/history_detail_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/history_detail_fragment"
+        android:name="com.example.meditationapp.fragment.HistoryDetailFragment"
+        android:label="@string/history_detail_title"
+        tools:layout="@layout/fragment_history_detail" >
+
+        <action
+            android:id="@+id/history_detail_to_history_edit"
+            app:destination="@+id/history_edit_fragment" />
+        <argument
+            android:name="history"
+            app:argType="com.example.meditationapp.db.History" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/history_edit_fragment"
+        android:name="com.example.meditationapp.fragment.HistoryEditFragment"
+        android:label="@string/history_edit_title"
+        tools:layout="@layout/fragment_history_edit" >
+
+        <action
+            android:id="@+id/history_edit_to_top"
+            app:destination="@+id/top_fragment"
+            app:popUpTo="@id/top_fragment"
+            app:popUpToInclusive="true"/>
+        <argument
+            android:name="history"
+            app:argType="com.example.meditationapp.db.History" />
+
+    </fragment>
+
+</navigation>
