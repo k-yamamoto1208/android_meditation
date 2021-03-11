@@ -1,3 +1,51 @@
 <resources>
-    <string name="app_name">MeditaionApp</string>
+    <string name="app_name">MeditationApp</string>
+
+    <!-- Navigation Title -->
+    <string name="top_title">Meditation</string>
+    <string name="history_create_title">Create History</string>
+    <string name="history_list_title">Histories</string>
+    <string name="history_detail_title">History Detail</string>
+    <string name="history_edit_title">Edit history</string>
+
+    <!--    Top-->
+    <string name="timer_refresh">Timer Refresh</string>
+    <string name="history">History</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="music">Music</string>
+    <string name="select_music_title">Select Music</string>
+    <string name="select_music_aurora">Aurora</string>
+    <string name="select_music_forest">Forest</string>
+    <string name="select_music_space">Space</string>
+    <string name="select_music_ok">OK</string>
+    <string name="select_music_cancel">Cancel</string>
+    <string name="history_create_dialog_title">Do you want to create a history?</string>
+    <string name="history_create_dialog_yes">YES</string>
+    <string name="history_create_dialog_no">NO</string>
+
+    <string name="transit_flag_to_create">TO HISTORY CREATE</string>
+    <string name="transit_flag_to_list">TO HISTORY LIST</string>
+
+    <!-- HistoryCreate -->
+    <string name="date_hint">yyyy/MM/dd</string>
+    <string name="meditation_time_title">Meditation Time: </string>
+    <string name="music_title">Music: </string>
+    <string name="memo_title">Memo: </string>
+    <string name="memo_hint">Describe your mood or experience.</string>
+    <string name="history_save_button">Save</string>
+
+    <string name="transit_flag_to_top">BACK TO TOP</string>
+
+    <!-- HistoryList -->
+    <string name="empty_list">No History</string>
+    <string name="no_memo">No Memo</string>
+
+    <!-- HistoryEdit -->
+    <string name="edit_complete">Edit Complete</string>
+    <string name="transit_flag_from_edit_to_top">TO TOP</string>
+
+    <!-- Other -->
+    <string name="edit">Edit</string>
+
 </resources>
