@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.meditationapp.Application
 import com.example.meditationapp.Event
-import com.example.meditationapp.HistoryRepository
+import com.example.meditationapp.repository.HistoryRepository
 import com.example.meditationapp.R
 import com.example.meditationapp.db.History
 import com.example.meditationapp.fragment.HistoryCreateFragmentArgs

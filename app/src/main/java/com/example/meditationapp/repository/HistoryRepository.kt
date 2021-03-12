@@ -1,4 +1,4 @@
-package com.example.meditationapp
+package com.example.meditationapp.repository
 
 import com.example.meditationapp.db.History
 import com.example.meditationapp.db.HistoryDao
