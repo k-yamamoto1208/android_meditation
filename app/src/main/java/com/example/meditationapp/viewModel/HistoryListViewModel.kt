@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.meditationapp.Event
-import com.example.meditationapp.HistoryRepository
+import com.example.meditationapp.repository.HistoryRepository
 import com.example.meditationapp.db.History
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers

@@ -79,7 +79,6 @@ dependencies {
     implementation "androidx.room:room-ktx:$room_version"
 
     //RecyclerView & CardView
-    // compileではなくimplementation書く必要があります
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
 
