@@ -27,7 +27,10 @@ class TopViewModel: ViewModel() {
 
     val drawableId = MutableLiveData(R.drawable.aurora)
     val isPlay = MutableLiveData(true)
-    val transitToCreate = MutableLiveData<Event<String>>()
+    private val _transitToCreate = MutableLiveData<Event<String>>()
+    val transitToCreate: LiveData<Event<String>>
+        get() = _transitToCreate
+
     private val _time = MutableLiveData(0)
     private val time: LiveData<Int>
         get() = _time
@@ -41,7 +44,7 @@ class TopViewModel: ViewModel() {
     }
 
     fun clickHistory(){
-        transitToCreate.value = Event(Application.instance.getString(R.string.transit_flag_to_list))
+        _transitToCreate.value = Event(Application.instance.getString(R.string.transit_flag_to_list))
     }
 
     fun clickPlay(context: Context){
@@ -119,7 +122,7 @@ class TopViewModel: ViewModel() {
             .setPositiveButton(Application.instance.getString(R.string.history_create_dialog_yes)){ _, _ ->
                 mediaPlayerPosition = 0
                 //クリックイベントをFragmentに渡す
-                transitToCreate.value = Event(Application.instance.getString(R.string.transit_flag_to_create))
+                _transitToCreate.value = Event(Application.instance.getString(R.string.transit_flag_to_create))
                 resetTimer()
             }
             .setNegativeButton(Application.instance.getString(R.string.history_create_dialog_no)){ dialog, _ ->

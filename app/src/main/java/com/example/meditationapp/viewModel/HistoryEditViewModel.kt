@@ -1,5 +1,6 @@
 package com.example.meditationapp.viewModel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -19,12 +20,14 @@ class HistoryEditViewModel @Inject constructor(private val repository: HistoryRe
     lateinit var history: History
 
     val memo = MutableLiveData("")
-    val transitToTop = MutableLiveData<Event<String>>()
+    private val _transitToTop = MutableLiveData<Event<String>>()
+    val transitToTop: LiveData<Event<String>>
+        get() = _transitToTop
 
     fun clickComplete(){
         viewModelScope.launch(Dispatchers.IO) {
             repository.updateHistoryInDB(history.id, memo.value!!)
         }
-        transitToTop.value = Event(Application.instance.getString(R.string.transit_flag_from_edit_to_top))
+        _transitToTop.value = Event(Application.instance.getString(R.string.transit_flag_from_edit_to_top))
     }
 }
