@@ -1,6 +1,7 @@
 package com.example.meditationapp.viewModel
 
 import android.annotation.SuppressLint
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -22,7 +23,9 @@ class HistoryCreateViewModel @Inject constructor(private val historyRepository: 
 
     lateinit var args: HistoryCreateFragmentArgs
 
-    val transitToTop = MutableLiveData<Event<String>>()
+    private val _transitToTop = MutableLiveData<Event<String>>()
+    val transitToTop: LiveData<Event<String>>
+        get() = _transitToTop
 
     @SuppressLint("SimpleDateFormat")
     val date = MutableLiveData(SimpleDateFormat("yyyy-MM-dd").format(Date()))
@@ -33,6 +36,6 @@ class HistoryCreateViewModel @Inject constructor(private val historyRepository: 
         viewModelScope.launch(Dispatchers.IO) {
             historyRepository.createHistoryInDB(history)
         }
-        transitToTop.value = Event(Application.instance.getString(R.string.transit_flag_to_top))
+        _transitToTop.value = Event(Application.instance.getString(R.string.transit_flag_to_top))
     }
 }

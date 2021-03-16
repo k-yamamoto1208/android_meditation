@@ -1,5 +1,6 @@
 package com.example.meditationapp.viewModel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -16,7 +17,9 @@ class HistoryListViewModel @Inject constructor(private val repository: HistoryRe
 
     val historyList = MutableLiveData<List<History>>()
     val isEmpty = MutableLiveData(false)
-    val transitToHistoryDetail = MutableLiveData<Event<String>>()
+    private val _transitToHistoryDetail = MutableLiveData<Event<String>>()
+    val transitToHistoryDetail: LiveData<Event<String>>
+        get() = _transitToHistoryDetail
 
     init {
         findList()
@@ -29,6 +32,6 @@ class HistoryListViewModel @Inject constructor(private val repository: HistoryRe
     }
 
     fun clickList(position: Int){
-        transitToHistoryDetail.value = Event(position.toString())
+        _transitToHistoryDetail.value = Event(position.toString())
     }
 }
