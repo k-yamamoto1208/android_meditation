@@ -5,21 +5,24 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
-        android:name="com.example.meditationapp.Application"
+        android:name=".Application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MeditationApp" >
-        <activity
-            android:name="com.example.meditationapp.activity.TopActivity"
-            android:label="@string/top_title"
-            android:screenOrientation="portrait">
+        android:theme="@style/Theme.MeditationApp">
+        <activity android:name=".activity.SplashActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.TopActivity"
+            android:label="@string/top_title"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 
